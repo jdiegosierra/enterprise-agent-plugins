@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "skip-changelog": true,
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": false,
+  "extra-files": [
+    {
+      "type": "json",
+      "path": "claude/.claude-plugin/plugin.json",
+      "jsonpath": "$.version"
+    }
+  ],
+  "packages": {
+    "plugins/acme-engineering": {
+      "component": "acme-engineering"
+    }
+  }
+}

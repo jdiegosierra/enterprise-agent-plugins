@@ -1,0 +1,18 @@
+{
+  "name": "acme-engineering",
+  "version": "0.1.0",
+  "description": "Acme Corp engineering tools: standards, workflows, and integrations for Claude Code",
+  "author": {
+    "name": "Acme Corp Engineering",
+    "url": "https://github.com/jdiegosierra"
+  },
+  "repository": "https://github.com/jdiegosierra/enterprise-agent-plugins",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "developer-tools",
+    "pull-requests",
+    "github",
+    "kubernetes"
+  ]
+}

@@ -1,0 +1,1 @@
+../../src/agents/sre.opencode.md

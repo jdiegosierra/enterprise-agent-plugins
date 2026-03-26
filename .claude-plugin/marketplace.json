@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jdiegosierra-enterprise-agent-plugins",
+  "description": "Enterprise agent plugins — department tools in one catalog",
+  "owner": {
+    "name": "Acme Corp",
+    "url": "https://github.com/jdiegosierra"
+  },
+  "plugins": [
+    {
+      "name": "acme-engineering",
+      "description": "Engineering tools: standards, workflows, and integrations",
+      "source": "./plugins/acme-engineering/claude",
+      "category": "engineering"
+    }
+  ]
+}
