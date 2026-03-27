@@ -108,30 +108,6 @@ enterprise-agent-plugins/
         └── tests/                     # Hook and integrity tests
 ```
 
-### Platform hierarchy
-
-**Claude Code and opencode are at the same level** — both are coding tools. Everything implemented for Claude Code should be implemented for opencode so teams can choose either tool.
-
-**OpenClaw is at a higher level** — it's a gateway/orchestrator that receives requests (Slack, Jira) and delegates coding work to opencode.
-
-```
-                    OpenClaw (gateway/orchestrator)
-                    ├── Receives Slack DMs, Jira tickets
-                    ├── Triages requests
-                    └── Delegates coding work ↓
-
-        ┌───────────────────┬───────────────────┐
-        │   Claude Code     │     opencode       │
-        │   (local CLI)     │   (server runtime) │
-        ├───────────────────┼───────────────────┤
-        │ agents            │ agents             │
-        │ skills            │ (via file read)    │
-        │ commands          │ (via prompt)       │
-        │ hooks             │ plugins (.ts)      │
-        │ marketplace       │ symlinks + setup   │
-        └───────────────────┴───────────────────┘
-```
-
 ### How it works
 
 1. **Content lives in `src/`** — agents, skills, commands, and runbooks are plain markdown files
