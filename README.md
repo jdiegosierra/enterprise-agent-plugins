@@ -6,18 +6,66 @@ This repository demonstrates a production-ready plugin architecture where `src/`
 
 ## Quick start
 
-### Install in Claude Code
+Pick your platform — you only need to install on the one(s) you use.
 
-```
+### Claude Code
+
+```bash
+# From a Claude Code session:
 /plugin marketplace add jdiegosierra/enterprise-agent-plugins
 /plugin install acme-engineering@jdiegosierra-enterprise-agent-plugins
 ```
 
-### Test locally
+Updates are automatic — Claude Code checks for new versions on each session start.
+
+Test locally without installing:
 
 ```bash
 claude --plugin-dir ./plugins/acme-engineering/claude
 ```
+
+### opencode
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/jdiegosierra/enterprise-agent-plugins.git ~/repos/enterprise-agent-plugins
+
+# 2. Run the setup script to symlink agents into opencode's config
+bash ~/repos/enterprise-agent-plugins/plugins/acme-engineering/scripts/setup-opencode-agents.sh
+
+# 3. Verify agents are registered
+ls -la ~/.config/opencode/agents/
+```
+
+Updates: `git pull` in the repo and re-run the setup script.
+
+### OpenClaw
+
+OpenClaw loads skills via `extraDirs` in `openclaw.json`. Point it to the `src/skills/` directory (not `openclaw/skills/` — OpenClaw doesn't resolve symlinks inside extraDirs).
+
+```bash
+# 1. Clone the repo into the OpenClaw workspace
+git clone https://github.com/jdiegosierra/enterprise-agent-plugins.git /path/to/repos/enterprise-agent-plugins
+
+# 2. Add to openclaw.json
+cat <<EOF >> /dev/null
+Add this to your openclaw.json under "skills.load":
+{
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "/path/to/repos/enterprise-agent-plugins/plugins/acme-engineering/src/skills"
+      ],
+      "watch": true
+    }
+  }
+}
+EOF
+
+# 3. Restart OpenClaw (or wait — watch mode picks up changes automatically)
+```
+
+Updates: `git pull` in the repo. With `watch: true`, OpenClaw detects changes automatically.
 
 ## What's included
 

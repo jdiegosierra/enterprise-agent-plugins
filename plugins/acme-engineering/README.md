@@ -1,6 +1,6 @@
 # acme-engineering
 
-Acme Corp's Engineering plugin for Claude Code. Developer tools, standards, and integrations.
+Acme Corp's Engineering plugin for Claude Code, opencode, and OpenClaw. Developer tools, standards, and integrations.
 
 ## What's included
 
@@ -42,14 +42,49 @@ Acme Corp's Engineering plugin for Claude Code. Developer tools, standards, and 
 
 ## Installation
 
-Inside a Claude Code session:
+Pick your platform — you only need to install on the one(s) you use.
 
-```
+### Claude Code
+
+```bash
+# From a Claude Code session:
 /plugin marketplace add jdiegosierra/enterprise-agent-plugins
 /plugin install acme-engineering@jdiegosierra-enterprise-agent-plugins
 ```
 
 Start a new session and run `/acme-engineering:setup` to configure your environment.
+
+### opencode
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/jdiegosierra/enterprise-agent-plugins.git ~/repos/enterprise-agent-plugins
+
+# 2. Symlink agents into opencode's config directory
+bash ~/repos/enterprise-agent-plugins/plugins/acme-engineering/scripts/setup-opencode-agents.sh
+
+# 3. Use an agent
+opencode run --agent sre "describe the current cluster state"
+```
+
+### OpenClaw
+
+Add the skills directory to `openclaw.json` under `skills.load.extraDirs`:
+
+```json
+{
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "/path/to/repos/enterprise-agent-plugins/plugins/acme-engineering/src/skills"
+      ],
+      "watch": true
+    }
+  }
+}
+```
+
+Point `extraDirs` to `src/skills/` directly — OpenClaw does not resolve symlinks inside extraDirs.
 
 ## Project structure
 
