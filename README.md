@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Enterprise Agent Plugins" width="100%">
+</p>
+
 # Enterprise Agent Plugins
 
 A scaffold for building **multi-platform AI coding agent plugins** that work across Claude Code, opencode, and OpenClaw. Use this as a starting point for your own enterprise engineering plugins.

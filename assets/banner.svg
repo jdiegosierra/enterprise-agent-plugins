@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="50%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#c084fc"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#a78bfa;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" rx="12" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#818cf8" stroke-width="0.5" fill="none">
+    <line x1="0" y1="40" x2="900" y2="40"/>
+    <line x1="0" y1="80" x2="900" y2="80"/>
+    <line x1="0" y1="120" x2="900" y2="120"/>
+    <line x1="0" y1="160" x2="900" y2="160"/>
+    <line x1="100" y1="0" x2="100" y2="200"/>
+    <line x1="200" y1="0" x2="200" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="200"/>
+    <line x1="400" y1="0" x2="400" y2="200"/>
+    <line x1="500" y1="0" x2="500" y2="200"/>
+    <line x1="600" y1="0" x2="600" y2="200"/>
+    <line x1="700" y1="0" x2="700" y2="200"/>
+    <line x1="800" y1="0" x2="800" y2="200"/>
+  </g>
+
+  <!-- Glow effect behind icon -->
+  <circle cx="100" cy="100" r="60" fill="url(#glow)"/>
+
+  <!-- Plugin icon: layered squares representing multi-platform -->
+  <g transform="translate(100, 100)">
+    <!-- Back layer (OpenClaw) -->
+    <rect x="-20" y="-24" width="32" height="32" rx="4" fill="none" stroke="#c084fc" stroke-width="1.5" opacity="0.5"/>
+    <!-- Middle layer (opencode) -->
+    <rect x="-12" y="-16" width="32" height="32" rx="4" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.7"/>
+    <!-- Front layer (Claude Code) -->
+    <rect x="-4" y="-8" width="32" height="32" rx="4" fill="none" stroke="#818cf8" stroke-width="2"/>
+    <!-- Center dot -->
+    <circle cx="12" cy="8" r="4" fill="url(#accent)"/>
+    <!-- Connection lines from center -->
+    <line x1="12" y1="8" x2="-4" y2="-8" stroke="#818cf8" stroke-width="1" opacity="0.4"/>
+    <line x1="12" y1="8" x2="28" y2="24" stroke="#818cf8" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Title -->
+  <text x="180" y="85" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#f1f5f9" letter-spacing="-0.5">Enterprise Agent Plugins</text>
+
+  <!-- Subtitle -->
+  <text x="180" y="118" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#94a3b8" letter-spacing="0.2">Multi-platform AI agent plugins for Claude Code, opencode, and OpenClaw</text>
+
+  <!-- Platform badges -->
+  <g transform="translate(180, 140)">
+    <!-- Claude Code badge -->
+    <rect x="0" y="0" width="108" height="26" rx="13" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="54" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#818cf8" text-anchor="middle" font-weight="500">Claude Code</text>
+
+    <!-- opencode badge -->
+    <rect x="120" y="0" width="90" height="26" rx="13" fill="#a78bfa" fill-opacity="0.15" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="165" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="500">opencode</text>
+
+    <!-- OpenClaw badge -->
+    <rect x="222" y="0" width="90" height="26" rx="13" fill="#c084fc" fill-opacity="0.15" stroke="#c084fc" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="267" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#c084fc" text-anchor="middle" font-weight="500">OpenClaw</text>
+  </g>
+
+  <!-- Decorative line -->
+  <rect x="180" y="92" width="80" height="2" rx="1" fill="url(#accent)" opacity="0.4"/>
+
+  <!-- Top-right decorative element -->
+  <g transform="translate(820, 40)" opacity="0.15">
+    <circle cx="0" cy="0" r="3" fill="#818cf8"/>
+    <circle cx="20" cy="-10" r="2" fill="#a78bfa"/>
+    <circle cx="35" cy="5" r="2.5" fill="#c084fc"/>
+    <line x1="3" y1="0" x2="18" y2="-9" stroke="#94a3b8" stroke-width="0.5"/>
+    <line x1="22" y1="-9" x2="33" y2="4" stroke="#94a3b8" stroke-width="0.5"/>
+  </g>
+</svg>
