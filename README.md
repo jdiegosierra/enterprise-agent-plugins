@@ -171,6 +171,10 @@ Lifecycle scripts that run on events:
 
 Git preserves symlinks. When Claude Code clones the repo via marketplace install, symlinks in `claude/` resolve to `src/` correctly. This means one source of truth, zero duplication.
 
+## See it in action
+
+Looking for a production deployment that uses this plugin system? Check out [enterprise-agent-operator](https://github.com/jdiegosierra/enterprise-agent-operator) — an EC2-based setup with OpenClaw as AI gateway, a Jira bridge for ticket automation, an opencode bridge for safe coding delegation, and full security hardening.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
