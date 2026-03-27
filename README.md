@@ -8,6 +8,19 @@ A scaffold for building **multi-platform AI coding agent plugins** that work acr
 
 This repository demonstrates a production-ready plugin architecture where `src/` is the single source of truth, and each AI platform reads from it via symlinks.
 
+One repo serves as a **single catalog for the entire organization**. Each department owns its own plugin — employees install only the ones they need.
+
+## Plugins
+
+| Plugin | Department | Status |
+|--------|-----------|--------|
+| [acme-engineering](plugins/acme-engineering/) | Engineering | Full example (agents, skills, runbooks, hooks) |
+| [acme-people](plugins/acme-people/) | People/HR | Placeholder — ready to customize |
+| [acme-finance](plugins/acme-finance/) | Finance | Placeholder — ready to customize |
+| [acme-marketing](plugins/acme-marketing/) | Marketing | Placeholder — ready to customize |
+
+Each plugin is **independent** — its own agents, skills, commands, and versioning. Employees from different departments install different plugins from the same marketplace.
+
 ## Quick start
 
 Pick your platform — you only need to install on the one(s) you use.
@@ -86,30 +99,36 @@ The `acme-engineering` plugin is a fully functional example with:
 
 ```
 enterprise-agent-plugins/
-├── .claude-plugin/marketplace.json     # Claude Code marketplace definition
-├── release-please-config.json          # Automated versioning
+├── .claude-plugin/marketplace.json     # Catalog — lists all department plugins
+├── release-please-config.json          # Versioning (one version per plugin)
 ├── .release-please-manifest.json
-├── .github/workflows/                  # CI/CD
+├── .github/workflows/
 │   └── release-please.yml
 └── plugins/
-    └── acme-engineering/               # One plugin per department
-        ├── src/                        # Source of truth — all content lives here
-        │   ├── agents/                 # Agent definitions (markdown + YAML frontmatter)
-        │   ├── commands/               # Slash commands
-        │   ├── skills/                 # Knowledge bases (SKILL.md per topic)
-        │   └── runbooks/              # Operational procedures
-        ├── claude/                     # Claude Code plugin root (symlinks to src/)
-        │   ├── .claude-plugin/        # Plugin manifest
-        │   ├── agents/                # → src/agents/
-        │   ├── commands/              # → src/commands/
-        │   ├── skills/                # → src/skills/
-        │   └── hooks/                 # Lifecycle hooks (bash scripts)
-        ├── opencode/                  # opencode agents (symlinks to src/)
-        │   └── agents/
-        ├── openclaw/                  # OpenClaw skills (symlinks to src/)
-        │   └── skills/
-        ├── scripts/                   # Setup and utility scripts
-        └── tests/                     # Hook and integrity tests
+    ├── acme-engineering/               # Engineering department (full example)
+    │   ├── src/                        # Source of truth — all content lives here
+    │   │   ├── agents/                 # Agent definitions (markdown + YAML frontmatter)
+    │   │   ├── commands/               # Slash commands
+    │   │   ├── skills/                 # Knowledge bases (SKILL.md per topic)
+    │   │   └── runbooks/              # Operational procedures
+    │   ├── claude/                     # Claude Code plugin root (symlinks to src/)
+    │   │   ├── .claude-plugin/        # Plugin manifest
+    │   │   ├── agents/                # → src/agents/
+    │   │   ├── commands/              # → src/commands/
+    │   │   ├── skills/                # → src/skills/
+    │   │   └── hooks/                 # Lifecycle hooks (bash scripts)
+    │   ├── opencode/                  # opencode agents (symlinks to src/)
+    │   │   └── agents/
+    │   ├── openclaw/                  # OpenClaw skills (symlinks to src/)
+    │   │   └── skills/
+    │   ├── scripts/
+    │   └── tests/
+    ├── acme-people/                    # People/HR department (placeholder)
+    │   └── claude/.claude-plugin/
+    ├── acme-finance/                   # Finance department (placeholder)
+    │   └── claude/.claude-plugin/
+    └── acme-marketing/                 # Marketing department (placeholder)
+        └── claude/.claude-plugin/
 ```
 
 ### How it works

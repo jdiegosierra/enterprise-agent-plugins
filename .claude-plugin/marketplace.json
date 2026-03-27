@@ -12,6 +12,24 @@
       "description": "Engineering tools: standards, workflows, and integrations",
       "source": "./plugins/acme-engineering/claude",
       "category": "engineering"
+    },
+    {
+      "name": "acme-people",
+      "description": "People/HR tools: hiring, onboarding, and team management",
+      "source": "./plugins/acme-people/claude",
+      "category": "hr"
+    },
+    {
+      "name": "acme-finance",
+      "description": "Finance tools: budgeting, reporting, and compliance",
+      "source": "./plugins/acme-finance/claude",
+      "category": "finance"
+    },
+    {
+      "name": "acme-marketing",
+      "description": "Marketing tools: campaigns, content, and analytics",
+      "source": "./plugins/acme-marketing/claude",
+      "category": "marketing"
     }
   ]
 }

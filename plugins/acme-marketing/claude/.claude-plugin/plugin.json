@@ -1,0 +1,11 @@
+{
+  "name": "acme-marketing",
+  "version": "0.1.0",
+  "description": "Acme Corp Marketing tools: campaigns, content, and analytics",
+  "author": {
+    "name": "Acme Corp Marketing Team",
+    "url": "https://github.com/jdiegosierra"
+  },
+  "repository": "https://github.com/jdiegosierra/enterprise-agent-plugins",
+  "license": "MIT"
+}

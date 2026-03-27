@@ -1,0 +1,11 @@
+{
+  "name": "acme-people",
+  "version": "0.1.0",
+  "description": "Acme Corp People/HR tools: hiring, onboarding, and team management",
+  "author": {
+    "name": "Acme Corp People Team",
+    "url": "https://github.com/jdiegosierra"
+  },
+  "repository": "https://github.com/jdiegosierra/enterprise-agent-plugins",
+  "license": "MIT"
+}
