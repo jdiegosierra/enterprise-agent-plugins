@@ -4,25 +4,46 @@
   "skip-changelog": true,
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": false,
-  "extra-files": [
-    {
-      "type": "json",
-      "path": "claude/.claude-plugin/plugin.json",
-      "jsonpath": "$.version"
-    }
-  ],
   "packages": {
     "plugins/acme-engineering": {
-      "component": "acme-engineering"
+      "component": "acme-engineering",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "claude/.claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
     },
     "plugins/acme-people": {
-      "component": "acme-people"
+      "component": "acme-people",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "claude/.claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
     },
     "plugins/acme-finance": {
-      "component": "acme-finance"
+      "component": "acme-finance",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "claude/.claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
     },
     "plugins/acme-marketing": {
-      "component": "acme-marketing"
+      "component": "acme-marketing",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "claude/.claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
     }
   }
 }
