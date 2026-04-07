@@ -1,0 +1,1 @@
+../../src/agents/frontend-developer.opencode.md
