@@ -1,0 +1,1 @@
+../../commands/notify-config.md

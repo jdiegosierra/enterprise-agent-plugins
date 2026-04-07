@@ -1,0 +1,1 @@
+../../src/agents/qa-engineer.opencode.md

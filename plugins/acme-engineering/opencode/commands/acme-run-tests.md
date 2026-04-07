@@ -1,0 +1,1 @@
+../../src/commands/run-tests.md
